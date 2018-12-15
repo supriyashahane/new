@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Student Details</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div>
+
+      <div *ngIf="!hideForm">
+          <form [formGroup]="form" (ngSubmit)="saveEntry()">
+ 
+             <ion-list>
+              <ion-item-group>
+                <ion-item-divider color="light" stacked>Course Name *</ion-item-divider>
+                <ion-item>
+                       
+                 <ion-input
+                 type="text"
+                 placeholder="Enter a Course..."
+                 formControlName="Course"
+                 [(ngModel)]="Course"></ion-input>
+                </ion-item>
+             </ion-item-group>
+ 
+                <ion-item-group>
+                   <ion-item-divider color="light" stacked>Students Name *</ion-item-divider>
+                   <ion-item>
+                          
+                    <ion-input
+                    type="text"
+                    placeholder="Enter a name..."
+                    formControlName="Name"
+                    [(ngModel)]="Name"></ion-input>
+                   </ion-item>
+                </ion-item-group>
+
+                <ion-item-group>
+                  <ion-item-divider color="light" stacked>Application Id *</ion-item-divider>
+                  <ion-item>
+                         
+                   <ion-input
+                   type="text"
+                   placeholder="Enter Application Id..."
+                   formControlName="AppId"
+                   [(ngModel)]="AppId"></ion-input>
+                  </ion-item>
+               </ion-item-group>
+ 
+ 
+                <ion-item>
+                   <button
+                      ion-button
+                      color="primary"
+                      text-center
+                      block
+                      [disabled]="!form.valid">Save Entry</button>
+                </ion-item>
+ 
+             </ion-list>
+ 
+          </form>
+       </div>
+  </div>
+</ion-content>
+  
+
